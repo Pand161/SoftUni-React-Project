@@ -1,11 +1,19 @@
+import AllItems from "./components/features/all-items/AllItems"
+import Footer from "./components/features/footer/Footer"
+import Header from "./components/features/header/Header"
+import Home from "./components/features/home/Home"
 
 
 function App() {
 
   return (
     <>
-      <h1>Hello world</h1>
-    </>
+      <Header />
+      {/* <Home /> */}
+      <AllItems />
+
+      <Footer />
+      </>
   )
 }
 
