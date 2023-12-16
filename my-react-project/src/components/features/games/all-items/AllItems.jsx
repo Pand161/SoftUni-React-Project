@@ -1,5 +1,7 @@
 export default function AllItems() {
     return(
+        <>
+        <h1 className="products-title">All Of Our Games!</h1>
         <div className="product-container">
             <div className="product-item">
                 <img src="account.jpg" alt="Product 1" />
@@ -29,5 +31,6 @@ export default function AllItems() {
 
 
         </div>
+        </>
     )
 }

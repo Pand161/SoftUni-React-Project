@@ -23,17 +23,10 @@ body{
     justify-content: space-around;
 }
 
-
-.left-links, .right-links {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-.left-links li, .right-links li {
-    margin: 0 20px;
-    position: relative;
+ul.navbar-nav{
+    --bs-nav-link-color: rgb(255 255 255 / 65%);
+    --bs-nav-link-hover-color: rgb(255 255 255 / 80%);
+    --bs-nav-link-disabled-color: rgb(255 255 255 / 30%);
 }
 
 .logo{
@@ -77,9 +70,9 @@ body{
     width: 100%;
     position: relative;
     top: 50%;
-    transform: translateY(+60%);
+    margin-top: 10em;
     text-align: center;
-    color: #e0ffff;
+    color: white;
 }
 
 .home-content h1{
@@ -176,7 +169,10 @@ span{
 }
 
 .products-title {
-    font-size: 70px;
+    font-size: 55px;
+    color: white;
+    text-align: center;
+    margin-top: 60px;
 }
 
 .footer {
