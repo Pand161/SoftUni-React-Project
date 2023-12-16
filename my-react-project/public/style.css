@@ -16,7 +16,7 @@ body{
 
 .navbar{
     width:100%;
-    margin:auto;
+    margin-top: 1em;
     padding: 35px 0;
     display: flex;
     align-items: center;
@@ -173,6 +173,74 @@ span{
     color: white;
     text-align: center;
     margin-top: 60px;
+}
+
+.register-title{
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+
+.register-form{
+    display: flex;
+    justify-content: center;
+    margin-top: 5em;
+}
+
+.register-container{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 630px;
+    background-color: rgba(51, 0, 111, 0.8);
+    border-radius: 50px;
+    border: none;
+    box-sizing: border-box;
+    padding: 2em;
+    gap: 0.5em;
+}
+
+.register-container input{
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    border: none;
+}
+
+.register-container label{
+    font-size: 20px;
+    color: white;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+.btn-submit{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.register-submit{
+    text-align: center;
+    margin-top: 2em;
+}
+
+.register-div{
+    text-align: center;
+    margin-top: 8px;
+}
+
+.register-text{
+    color: white;
+}
+
+.btn-submit{
+    width: 170px;
+    height: 45px;
+    background-color:#9932CC;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 .footer {
