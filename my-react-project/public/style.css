@@ -248,6 +248,11 @@ span{
     box-sizing: border-box;
 }
 
+.btn-submit:hover{
+    transition: 0.5s;
+    background-color: #75269d;
+}
+
 .footer {
         position: fixed;
         left: 0;
