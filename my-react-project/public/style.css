@@ -169,25 +169,25 @@ span{
 }
 
 .products-title {
-    font-size: 55px;
+    font-size: 35px;
     color: white;
     text-align: center;
     margin-top: 60px;
 }
 
-.register-title{
+.register-title, .login-title, .create-title{
     font-size: 30px;
     color: white;
     text-align: center;
 }
 
-.register-form{
+.register-form, .login-form, .create-form{
     display: flex;
     justify-content: center;
     margin-top: 5em;
 }
 
-.register-container{
+.register-container, .login-container, .create-container{
     display: flex;
     flex-direction: column;
     width: 500px;
@@ -200,37 +200,38 @@ span{
     gap: 0.5em;
 }
 
-.register-container input{
+.create-container{
+    height: 690px;
+}
+
+.login-container{
+    height: 450px;
+}
+
+.register-container input, .login-container input, .create-container input{
     border-radius: 10px;
     padding: 5px 10px 5px 10px;
     border: none;
 }
 
-.register-container label{
+.register-container label, .login-container label, .create-container label{
     font-size: 20px;
     color: white;
     margin-top: 20px;
     margin-left: 5px;
 }
 
-.btn-submit{
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-.register-submit{
+.register-submit, .login-submit, .create-submit{
     text-align: center;
     margin-top: 2em;
 }
 
-.register-div{
+.register-div, .login-div{
     text-align: center;
     margin-top: 8px;
 }
 
-.register-text{
+.register-text, .login-text{
     color: white;
 }
 
@@ -241,6 +242,10 @@ span{
     color: white;
     font-weight: 600;
     font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 .footer {

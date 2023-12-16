@@ -9,13 +9,13 @@ export default function Login() {
             <div className="login-title">Login</div>
 
                 <label htmlFor="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="peter@gmail.com" />
+                <input type="text" id="email" name="email" placeholder="peter@gmail.com" />
 
                 <label htmlFor="pass">Password:</label>
-                <input type="password" name="password" id="register-password" />
+                <input type="password" name="password" id="login-password" />
 
                 <div className="login-submit">
-                    <input className="btn-submit" type="submit" value="Sign Up" />
+                    <input className="btn-submit" type="submit" value="Sign In" />
                 </div>
                 
 

@@ -1,7 +1,7 @@
 export default function AllItems() {
     return(
         <>
-        <h1 className="products-title">All Of Our Games!</h1>
+        <h1 className="products-title">You Can Enjoy All Of Our Games Here!</h1>
         <div className="product-container">
             <div className="product-item">
                 <img src="account.jpg" alt="Product 1" />
