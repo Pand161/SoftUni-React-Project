@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom"
+import style from "./Login.module.css"
 
 export default function Login() {
     return(
-        <div id="login-form" className="login-form">
+        <div id="login-form" className={style.loginForm}>
         <form id="login">
-            <div className="login-container">
+            <div className={style.loginContainer}>
 
-            <div className="login-title">Login</div>
+            <div className={style.loginTitle}>Login</div>
 
                 <label htmlFor="email">Email:</label>
                 <input type="text" id="email" name="email" placeholder="peter@gmail.com" />
@@ -14,13 +15,13 @@ export default function Login() {
                 <label htmlFor="pass">Password:</label>
                 <input type="password" name="password" id="login-password" />
 
-                <div className="login-submit">
-                    <input className="btn-submit" type="submit" value="Sign In" />
+                <div className={style.loginSubmit}>
+                    <input className={style.btnSubmit} type="submit" value="Sign In" />
                 </div>
                 
 
-                <div className="login-div">
-                <p className="login-text">
+                <div className={style.loginDiv}>
+                <p className={style.loginText}>
                         If you don't have profile click <Link to="/register">here</Link>
                     </p>
                 </div>

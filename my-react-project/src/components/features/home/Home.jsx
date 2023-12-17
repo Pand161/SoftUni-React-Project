@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom"
+import styles from "./Home.module.css"
 
 export default function Home() {
     
     return(
-        <div className="home-content">
-                <h1>Welcome to Game Bazaar</h1>
-                <p>Most affordable prices for the Games you love to play, <br /> We are in Top 3 most popular Marketplaces these Days! </p>
+        <div className={styles.homeContent}>
+                <h1 className={styles.homeTitle}>Welcome to Game Bazaar</h1>
+                <p className={styles.homeText}>Most affordable prices for the Games you love to play, <br /> We are in Top 3 most popular Marketplaces these Days! </p>
                 <div>
-                    <Link to={"/all-games"} ><button type="button" className="home-button"><span></span>ENTER</button></Link>
+                    <Link to={"/all-games"} ><button type="button" className={styles.homeButton}><span></span>ENTER</button></Link>
                 </div>
 
                 <h2>Our Latest Offers!</h2>

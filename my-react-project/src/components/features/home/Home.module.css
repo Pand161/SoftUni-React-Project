@@ -1,0 +1,54 @@
+.homeContent{
+    width: 100%;
+    position: relative;
+    top: 50%;
+    margin-top: 10em;
+    text-align: center;
+    color: white;
+}
+
+.homeTitle{
+    font-size: 70px;
+    margin-top: 80px;
+}
+
+.homeText{
+    margin: 20px auto;
+    font-weight:100;
+    line-height: 25px;
+}
+
+.homeButton {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    font-weight: bold;
+    border:2px solid #9932CC;
+    border-radius: 25px;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+span{
+    background: #9932CC;
+    height: 100%;
+    width: 0;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.homeButton:hover span {
+    width: 100%;
+}
+
+.homeButton:hover{
+    border-color: rgba(0,0,0,0); 
+}

@@ -1,0 +1,72 @@
+
+.loginTitle{
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+
+.loginForm{
+    display: flex;
+    justify-content: center;
+    margin-top: 5em;
+}
+
+.loginContainer{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 450px;
+    background-color: rgba(51, 0, 111, 0.8);
+    border-radius: 50px;
+    border: none;
+    box-sizing: border-box;
+    padding: 2em;
+    gap: 0.5em;
+}
+
+
+.loginContainer input{
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    border: none;
+}
+
+.loginContainer label{
+    font-size: 20px;
+    color: white;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+.loginSubmit{
+    text-align: center;
+    margin-top: 2em;
+}
+
+.loginDiv{
+    text-align: center;
+    margin-top: 8px;
+}
+
+.loginText{
+    color: white;
+}
+
+.btnSubmit{
+    width: 170px;
+    height: 45px;
+    background-color:#9932CC;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.btnSubmit:hover{
+    transition: 0.5s;
+    background-color: #75269d;
+}
+
