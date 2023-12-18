@@ -1,17 +1,38 @@
+import { useParams } from "react-router-dom";
 import * as style from "./Details.module.css";
 
-export default function Details() {
+import * as itemService from "../../../../services/itemService"
+import { useEffect, useState } from "react";
 
+export default function Details() {
+    const {id} = useParams();
+    const [item, setItem] = useState([])
+
+    useEffect(() => {
+        itemService.getOne(id)
+        .then(result => setItem(result))
+        .catch(err => {
+            console.log(err);
+        });
+    }, [])
 
     return(
         <div id="details-div" className={style.detailsDiv}>
             <div className={style.detailsContainer}>
                 <div className={style.detailsTitle}>Details</div>
-                <img src="https://i.pinimg.com/736x/4e/55/a5/4e55a5a5daa42b97dce7856b9ecb6502.jpg" alt="Profile Image" className={style.profileImg}/>
-                <div className={style.detailsContent}>
-                <label>Username : Eron77</label>
-                <label>Email : Eron77@gmail.com</label>
-                </div>
+                    <div className={style.detailsContent}>
+                        <img src={item.imageUrl} alt={`${item.title}'s Image`}className={style.detailsImg}/>
+                        <div className={style.detailsValues}>
+                                <label>Title : {item.title}</label>
+                                <label>Genre : {item.genre}</label>
+                                <label>Description : {item.description} sdsdasadasdsda sadasdasdsada sdsdasdasda asssdaasd asdsdads </label>
+                                <label>Price : {item.price}$</label>
+                        </div>
+                        <div className={style.detailsButtons}>
+                            <button className={style.editBtn}>Edit</button>
+                            <button className={style.deleteBtn}>Delete</button>
+                        </div>
+                    </div>
             </div>
     </div>
     )

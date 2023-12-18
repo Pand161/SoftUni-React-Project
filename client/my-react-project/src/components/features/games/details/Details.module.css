@@ -1,8 +1,8 @@
 .detailsContainer{
     display: flex;
     flex-direction: column;
-    width: 1000px;
-    height: 550px;
+    width: 800px;
+    height: 700px;
     background-color: rgba(51, 0, 111, 0.8);
     border-radius: 50px;
     border: none;
@@ -28,19 +28,18 @@
 
 .detailsContent{
     display: flex;
-    flex-direction: row;
-    width: 668px;
-    height: 350px;
+    flex-direction: column;
+    align-items: center;
 }
 
-.profileImg {
-    width: 350px;
+.detailsImg {
+    width: auto;
     height: 250px;
-    border-radius: 10%;
+    border-radius: 5%;
 
 }
 
-.profileValue{
+.detailsValues{
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -48,8 +47,33 @@
     text-align: center;
 }
 
-.profileValue label{
+.detailsValues label{
     font-size: 25px;
     color: white;
+    padding-top: 12px;
 }
 
+.detailsButtons{
+    display: flex;
+    margin-top: 40px;
+    gap: 150px;
+    justify-content: space-around;
+}
+
+.editBtn{
+    border: none;
+    background-color: rgb(42, 42, 225);
+    color: white;
+    padding: 12px 50px 12px 50px;
+    border-radius: 15px;
+    font-weight: 600;
+}
+
+.deleteBtn{
+    border: none;
+    background-color: rgb(225, 42, 42);
+    color: white;
+    padding: 12px 40px 12px 40px;
+    border-radius: 15px;
+    font-weight: 600;
+}
