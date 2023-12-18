@@ -13,8 +13,9 @@ export const getAll = async (id) => {
     return result;
 };
 
-export const create = async (id, text) => {
+export const create = async (id, text, username) => {
     const newComment = await request.post(baseUrl, {
+        username,
         id,
         text,
     });

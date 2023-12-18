@@ -1,0 +1,15 @@
+.container{
+    margin-left: 1em;
+    margin-bottom: 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+}
+
+.text{
+    color:white;
+    background-color: #7f1259;
+    border-radius: 5px;
+    padding: 5px 0px 5px 5px;
+}

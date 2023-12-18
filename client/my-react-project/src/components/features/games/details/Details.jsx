@@ -9,6 +9,7 @@ import Path from "../../../../paths";
 import AuthContext from "../../../../contexts/authContext";
 import reducer from "./commentReducer";
 import useForm from "../../../../hooks/useForm";
+import Comment from "./comment/Comment";
 
 const initialState = {
     comment: ''
@@ -16,7 +17,7 @@ const initialState = {
 
 
 export default function Details() {
-    const { auth, email } = useContext(AuthContext);
+    const { auth, email, username } = useContext(AuthContext);
     const { id } = useParams();
     const [item, setItem] = useState([]);
     const [bought, setBought] = useState(false);
@@ -31,16 +32,18 @@ export default function Details() {
             console.log(err);
         });
 
-        purchaseService.getBuyersOfProduct(id)
-                .then(result => result.includes(auth._id) ? setBought(true) : setBought(false))
-                .catch(err => {
-                    console.log(err.message);
-                });
+        // purchaseService.getBuyersOfProduct(id)
+        //         .then(result => result.includes(auth._id) ? setBought(true) : setBought(false))
+        //         .catch(err => {
+        //             console.log(err.message);
+        //         });
 
         commentService.getAll(id)
-        .then((result) => setAllComments(result));
+        .then((result) => setAllComments(result))
+        
+        
 
-    }, [auth._id, id])   
+    }, [id])   
 
     const onDeleteHandler = () =>{
         if(confirm("Are you sure you want to delete this game?")){
@@ -63,7 +66,8 @@ export default function Details() {
 
         const newComment = await commentService.create(
             id,
-            values.comment
+            values.comment,
+            username
         );
 
         console.log(values.comment)
@@ -73,6 +77,8 @@ export default function Details() {
             type: 'ADD_COMMENT',
             payload: newComment
         })
+
+        navigate(Path.AllGames);
     }
 
     const { values, onChange, onSubmit } = useForm(addCommentHandler, initialState);
@@ -100,8 +106,10 @@ export default function Details() {
                     </div>
                 
                 <div className={style.detailsTitle}>Comments:</div>
-                {allComments.map(comment => (<h1 key={comment.id}>{comment.text}</h1>))}
-                {<div className={style.noComments}>No Comments Yet!</div>}
+                <div className={style.commentList}>
+                {allComments.map(comment => (<Comment key={comment._id} {...comment}/>))}
+                </div>
+                {allComments.length === 0 && (<div className={style.noComments}>No Comments Yet!</div>)}
                 </div>
             </div>
         </div>
