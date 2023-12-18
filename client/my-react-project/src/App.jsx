@@ -11,6 +11,7 @@ import Register from "./components/features/auth/register/Register"
 import Profile from "./components/features/auth/profile/Profile"
 import CreateGame from "./components/features/games/create-game/CreateGame"
 import Path from "./paths"
+import Logout from "./components/features/auth/logout/Logout"
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path={Path.Login} element={<Login />} />
         <Route path={Path.Register} element={<Register />} />
         <Route path={Path.Profile} element={<Profile />} />
+        <Route path={Path.Logout} element={<Logout />} />
       </Routes>
       <Footer />
       </>
