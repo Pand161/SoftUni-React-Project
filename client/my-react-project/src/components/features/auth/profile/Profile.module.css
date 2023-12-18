@@ -1,0 +1,79 @@
+.profileContainer{
+    display: flex;
+    flex-direction: column;
+    width: 700px;
+    height: 400px;
+    background-color: rgba(51, 0, 111, 0.8);
+    border-radius: 50px;
+    border: none;
+    box-sizing: border-box;
+    padding: 1em;
+    gap: 0.5em;
+    
+}
+
+.profileTitle{
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    
+}
+
+.profileDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 5em;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.profileContent{
+    display: flex;
+    flex-direction: row;
+    width: 668px;
+    height: 350px;
+}
+
+.profileImg {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 35px;
+    margin-left: 35px;
+}
+
+.profileValue{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+.profileValue label{
+    font-size: 25px;
+    color: white;
+}
+
+.profileButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.editBtn{
+    border: none;
+    background-color: rgb(4, 154, 77);
+    padding: 12px 50px 12px 50px;
+    border-radius: 25px;
+    color: white;
+    font-weight: 500;
+}
+
+.deleteBtn{
+    border: none;
+    background-color: rgb(165, 19, 19);
+    padding: 12px 40px 12px 40px;
+    border-radius: 25px;
+    color: white;
+    font-weight: 500;
+}

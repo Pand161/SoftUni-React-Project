@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { useNavigate } from 'react-router-dom';
 import style from "./Create.module.css"
 import * as itemService from "../../../../services/itemService"
@@ -44,7 +43,7 @@ export default function CreateGame() {
                 <input type="text" name="imageUrl" id="imageUrl" placeholder="http://..." onChange={onChange} value={values.imageUrl}/>
 
                 <label htmlFor="description">Description:</label>
-                <input type="text" name="description" id="description" placeholder="It is most enjoyable with friends..." onChange={onChange} value={values.description}/>
+                <textarea name="description" id="description" rows="3" cols="50" placeholder="It is most enjoyable with friends..." onChange={onChange} value={values.description}></textarea>
 
                 <label htmlFor="price">Price:</label>
                 <input type="number" name="price" id="price" onChange={onChange} value={values.price}/>
