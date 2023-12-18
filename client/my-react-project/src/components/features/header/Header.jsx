@@ -32,7 +32,7 @@ export default function Header() {
                 <Link className={styles.navLink} to="/register">Register</Link>
                 </li>
                 <li className={styles.navItem}>
-                    <a className={styles.navLink} href="#">Logout</a>
+                <Link className={styles.navLink} to="/logout">Logout</Link>
                 </li>
             </ul>
         </div>
