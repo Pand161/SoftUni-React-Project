@@ -52,3 +52,12 @@ span{
 .homeButton:hover{
     border-color: rgba(0,0,0,0); 
 }
+
+
+.productContainer {
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

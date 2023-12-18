@@ -14,17 +14,6 @@ export const getOne = async (id) => {
     return result;
 }
 
-export const getLatest = async () => {
-    const query = new URLSearchParams({
-        offset: 0,
-        pageSize: 3,
-    });
-
-    const result = await request.get(`${baseUrl}?${query}`);
-
-    return result;
-}
-
 export const createItem = async (data) => {
     const result = await request.post(baseUrl, data);
 

@@ -1,7 +1,21 @@
 import { Link } from "react-router-dom"
 import styles from "./Home.module.css"
+import * as itemService from "../../../services/itemService"
+import { useState, useEffect } from "react"
+import Item from "../games/item/Item"
 
 export default function Home() {
+    const [items, setItems] = useState([])
+
+    useEffect(() => {
+        itemService.getAll()
+        .then(result => {
+            setItems(result.slice(-3));
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    }, [])
     
     return(
         <div className={styles.homeContent}>
@@ -13,30 +27,21 @@ export default function Home() {
 
                 <h2>Our Latest Offers!</h2>
 
-                <div className="product-container">
-            <div className="product-item">
-                <img src="account.jpg" alt="Product 1" />
-                <h3>Product 1</h3>
-                <p>Description of Product 1.</p>
-                <button className="product-button">Details</button>
-            </div>
-            <div className="product-item">
-                <img src="account2.jpg" alt="Product 2" />
-                <h3>20 Characters max</h3>
-                <p>35 characters max</p>
-                <button className="product-button">Details</button>
-            </div>
-            <div className="product-item">
-                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1966720/capsule_616x353.jpg?t=1700231592" alt="Product 3" />
-                <h3>Lethal Company</h3>
-                <p>Fun to play with friends</p>
-                <button className="product-button">Details</button>
+                <div className={styles.productContainer}>
+                
+                {items.map(item => (
+            <Item key={item._id} {...item} />
+        ))}    
+
+        {items.length === 0 && (
+               <div className="products-title">No Games Yet!</div>
+            )}
+        
+
             </div>
 
 
         </div>
-            </div>
-
             
     )
 }

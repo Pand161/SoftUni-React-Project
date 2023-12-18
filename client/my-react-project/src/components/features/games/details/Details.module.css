@@ -1,8 +1,8 @@
-.profileContainer{
+.detailsContainer{
     display: flex;
     flex-direction: column;
-    width: 700px;
-    height: 400px;
+    width: 1000px;
+    height: 550px;
     background-color: rgba(51, 0, 111, 0.8);
     border-radius: 50px;
     border: none;
@@ -12,21 +12,21 @@
     
 }
 
-.profileTitle{
+.detailsTitle{
     font-size: 50px;
     color: white;
     text-align: center;
     
 }
 
-.profileDiv{
+.detailsDiv{
     display: flex;
     justify-content: center;
     margin-top: 5em;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
-.profileContent{
+.detailsContent{
     display: flex;
     flex-direction: row;
     width: 668px;
@@ -34,11 +34,10 @@
 }
 
 .profileImg {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    margin-top: 35px;
-    margin-left: 35px;
+    width: 350px;
+    height: 250px;
+    border-radius: 10%;
+
 }
 
 .profileValue{
@@ -54,17 +53,3 @@
     color: white;
 }
 
-.productContainer {
-    max-width: 1200px;
-    margin: 20px auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.productsTitle {
-    font-size: 35px;
-    color: white;
-    text-align: center;
-    margin-top: 60px;
-}

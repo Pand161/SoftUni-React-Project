@@ -1,0 +1,17 @@
+
+
+.productContainer {
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+.productsTitle {
+    font-size: 35px;
+    color: white;
+    text-align: center;
+    margin-top: 60px;
+}

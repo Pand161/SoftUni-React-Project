@@ -22,9 +22,6 @@ export default function Header() {
                 {isAuthenticated && (
                 <>
                 <li className={styles.navItem}>
-                <Link className={styles.navLink} to={Path.MyGames}>My Games</Link>
-                </li>
-                <li className={styles.navItem}>
                 <Link className={styles.navLink} to={Path.Create}>Create New Offer</Link>
                 </li>
                 </>
