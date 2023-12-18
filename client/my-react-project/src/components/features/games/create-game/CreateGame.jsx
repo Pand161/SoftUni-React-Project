@@ -2,6 +2,8 @@ import { useState } from "react"
 import { useNavigate } from 'react-router-dom';
 import style from "./Create.module.css"
 import * as itemService from "../../../../services/itemService"
+import Path from "../../../../paths";
+import useForm from "../../../../hooks/useForm";
 
 const initialState = {
     title: '',
@@ -14,27 +16,20 @@ const initialState = {
 export default function CreateGame() {
     const navigate = useNavigate();
 
-    const [values, setValues] = useState(initialState);
-
-    function onChange(e) {
-        e.preventDefault()
-
-        setValues({
-            ...values,
-            [e.currentTarget.name]: e.currentTarget.value,
-        })
-    }
-
-    const onSubmitHandler = (values) => {
+    const createSubmitHandler = (values) => {
 
         itemService.createItem(values)
-            .then(() => navigate('/catalog'))
+            .then(() => navigate(Path.AllGames))
             .catch(err => console.log(err));
     };
 
+    const { values, onChange, onSubmit } = useForm(createSubmitHandler, initialState);
+
+    
+
     return(
         <div id="create-form" className={style.createForm}>
-        <form id="create" onSubmit={onSubmitHandler}>
+        <form id="create" onSubmit={onSubmit}>
             <div className={style.createContainer}>
 
             <div className={style.createTitle}>Create New Game Offer</div>
