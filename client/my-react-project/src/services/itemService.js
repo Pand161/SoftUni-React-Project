@@ -26,4 +26,4 @@ export const editItem = async (id, data) => {
     return result;
 };
 
-export const removeItem = async (data) => request.remove(`${baseUrl}/${data}`);
+export const removeItem = async (id) => request.remove(`${baseUrl}/${id}`);

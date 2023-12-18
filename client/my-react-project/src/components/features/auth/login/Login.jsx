@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { Link } from "react-router-dom"
 import style from "./Login.module.css"
 import { useContext } from "react"

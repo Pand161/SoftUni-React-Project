@@ -1,0 +1,66 @@
+.createTitle{
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+
+.createForm{
+    display: flex;
+    justify-content: center;
+    margin-top: 5em;
+}
+
+.createContainer{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    min-height: 690px;
+    background-color: rgba(51, 0, 111, 0.8);
+    border-radius: 50px;
+    border: none;
+    box-sizing: border-box;
+    padding: 2em;
+    gap: 0.5em;
+}
+
+.createContainer input{
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    border: none;
+}
+
+.createContainer textarea{
+    border-radius: 10px;
+    padding: 5px 10px 5px 10px;
+    border: none;
+}
+
+.createContainer label{
+    font-size: 20px;
+    color: white;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+.btnSubmit{
+    width: 170px;
+    height: 45px;
+    background-color:#9932CC;
+    color: white;
+    font-weight: 600;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.createSubmit{
+    text-align: center;
+    margin-top: 2em;
+}
+
+.btnSubmit:hover{
+    transition: 0.5s;
+    background-color: #75269d;
+}

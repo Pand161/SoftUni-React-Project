@@ -2,14 +2,13 @@
     display: flex;
     flex-direction: column;
     width: 800px;
-    height: 700px;
+    height: auto;
     background-color: rgba(51, 0, 111, 0.8);
     border-radius: 50px;
     border: none;
     box-sizing: border-box;
     padding: 1em;
     gap: 0.5em;
-    
 }
 
 .detailsTitle{
@@ -76,4 +75,56 @@
     padding: 12px 40px 12px 40px;
     border-radius: 15px;
     font-weight: 600;
+}
+
+.buyBtn{
+    border: none;
+    background-color:blueviolet;
+    color: white;
+    padding: 12px 50px 12px 50px;
+    border-radius: 15px;
+    font-weight: 600;
+}
+
+.commentsContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(51, 0, 111, 0.8);
+    border-radius: 50px;
+    border: none;
+    box-sizing: border-box;
+    padding: 1em;
+    gap: 0.5em;
+}
+
+.commentsContainer textarea{
+    border-radius: 10px;
+    width: 550px;
+    margin-bottom: 15px;
+    padding: 8px;
+}
+
+.commentsDiv{
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+}
+
+.commentsWidth{
+    width: 800px;
+    height: auto;
+}
+
+.noComments{
+    font-size: 35px;
+    color: white;
+    text-align: center;
+}
+
+.commentsForm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

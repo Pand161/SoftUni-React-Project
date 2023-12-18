@@ -13,6 +13,7 @@ import CreateGame from "./components/features/games/create-game/CreateGame"
 import Path from "./paths"
 import Logout from "./components/features/auth/logout/Logout"
 import Details from "./components/features/games/details/Details"
+import EditGame from "./components/features/games/edit-game/EditGame"
 
 
 function App() {
@@ -26,7 +27,9 @@ function App() {
         <Route path={Path.Home} element={<Home />} />
         <Route path={Path.AllGames} element={<AllItems />} />
         <Route path={Path.Create} element={<CreateGame />} />
+
         <Route path={`${Path.Details}/:id`} element={<Details />} />
+        <Route path={`${Path.Edit}/:id`} element={<EditGame />} />
 
         
         <Route path={Path.Login} element={<Login />} />
