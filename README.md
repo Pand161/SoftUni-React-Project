@@ -65,7 +65,7 @@ Valid credentials in this case are:
 
 ### Register page
 
-The register form expects as input: username, email, mobile number, password and repeat password. Button is disabled, if some of fiels is empty or does not meet the conditions.
+The register form expects as input: username, email, password and repeat password. Button is disabled, if some of files is empty or does not meet the conditions.
 Valid inputs in this case are:
  - 	Username should be at least 4 symbols as well.
  - 	The valid Email address must be example@example.example
@@ -86,8 +86,8 @@ Valid inputs in this case are:
    
     - User can login in system after successful registration with email and password.
     - The service automatically creates a session and returns an authorization token, that will be used for requests. The session is stored in browser's Local storage. 
-    - Path for registration and login is stored in authAPI.js file
-    - Registration require username, valid email, telephone number and password.
+    - Path for registration and login is stored in authService.js file
+    - Registration require username, valid email and password.
 
 
 ### DEMO USERS
@@ -199,15 +199,12 @@ The page there are two parts - public and private(for logged in users).
 
 ## Security and Guards
  - Guеsts guard                                
-   The application requires the user to be authenticated in order to create classifieds for sale of equipment, post 
+   The application requires the user to be authenticated in order to create classified for post 
    comments or make purchases.
 
  - Auth guard                       
    The application redirects to home page when already authenticated user tries to access login, register, profile or add new product page.
 
- - Error boundary
-   Catch JavaScript errors anywhere in the child component tree, log those errors, and display a fallback UI instead of crashing the whole app
-   
  - Undefined routes                        
    Not fond page is implemented to handle undefined routes.
 
