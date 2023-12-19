@@ -27,3 +27,9 @@ export const editItem = async (id, data) => {
 };
 
 export const removeItem = async (id) => request.remove(`${baseUrl}/${id}`);
+
+export const getMyItems = async (userId) => {
+    const result = await request.get(`${baseUrl}?where=_ownerId%3D%22${userId}%22&sortBy=_createdOn%20desc`);
+
+    return result;
+};

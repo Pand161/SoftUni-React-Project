@@ -17,7 +17,7 @@ const initialState = {
 
 
 export default function Details() {
-    const { auth, email, username } = useContext(AuthContext);
+    const { userId, email, username } = useContext(AuthContext);
     const { id } = useParams();
     const [item, setItem] = useState([]);
     const [bought, setBought] = useState(false);
@@ -32,18 +32,18 @@ export default function Details() {
             console.log(err);
         });
 
-        // purchaseService.getBuyersOfProduct(id)
-        //         .then(result => result.includes(auth._id) ? setBought(true) : setBought(false))
-        //         .catch(err => {
-        //             console.log(err.message);
-        //         });
+        if(userId) {
+            purchaseService.getBuyersOfItem(id)
+            .then(result => result.includes(userId) ? setBought(true) : setBought(false))
+            .catch(err => console.log(err));
+        }
 
         commentService.getAll(id)
         .then((result) => setAllComments(result))
         
         
 
-    }, [id])   
+    }, [id, userId])   
 
     const onDeleteHandler = () =>{
         if(confirm("Are you sure you want to delete this game?")){
@@ -52,14 +52,6 @@ export default function Details() {
         .catch(err => console.log(err))
         }
         
-    }
-
-    const onBuyHandler = (e) => {
-        e.preventDefault();
-
-        purchaseService.purchase(id, auth.id)
-        .then(() => setBought(true))
-        .catch(err => console.log(err))
     }
 
     const addCommentHandler = async () => {
@@ -81,6 +73,25 @@ export default function Details() {
         navigate(Path.AllGames);
     }
 
+    const onBuyHandler = (e) => {
+        e.preventDefault();
+
+        purchaseService.purchase(id, userId)
+        .then(() => setBought(true))
+        .catch(err => console.log(err))
+    }
+
+    let isOwner = false;
+    let isLoggedIn
+
+    if (userId) {
+        if (item._ownerId === userId) {
+            isOwner = true;
+        } else {
+            isLoggedIn = true;
+        }
+    }
+
     const { values, onChange, onSubmit } = useForm(addCommentHandler, initialState);
 
     return(
@@ -98,10 +109,14 @@ export default function Details() {
                                 <label>Price : {item.price}$</label>
                         </div>
                         <div className={style.detailsButtons}>
-                            <Link to={`${Path.Edit}/${id}`}><button className={style.editBtn}>Edit</button></Link>
-                            <button className={style.deleteBtn} onClick={onDeleteHandler}>Delete</button>
-                            {!bought && (<button className={style.buyBtn} onClick={onBuyHandler}>Buy</button>)}
-                            {bought && (<div className={style.detailsTitle}>You have already bought this item</div>)}
+                            {isOwner && (<><Link to={`${Path.Edit}/${id}`}><button className={style.editBtn}>Edit</button></Link>
+                            <button className={style.deleteBtn} onClick={onDeleteHandler}>Delete</button></>)}
+                            
+                            {isLoggedIn && 
+                            (
+                            <>{!bought && (<button className={style.buyBtn} onClick={onBuyHandler}>Buy</button>)}
+                            {bought && (<div className={style.alreadyBought}>You have already bought this item</div>)}</>
+                            )}
                         </div>
                     </div>
                 
@@ -113,8 +128,8 @@ export default function Details() {
                 </div>
             </div>
         </div>
-
-        <div id="comments-div" className={style.commentsDiv}>
+        { (isLoggedIn || isOwner) &&
+        (<div id="comments-div" className={style.commentsDiv}>
             <div className={style.commentsWidth}>
                 <div className={style.commentsContainer}>
             
@@ -127,7 +142,8 @@ export default function Details() {
                     </form>
                 </div>
             </div>
-        </div>
+        </div>)
+}
         </>
     )
 }
