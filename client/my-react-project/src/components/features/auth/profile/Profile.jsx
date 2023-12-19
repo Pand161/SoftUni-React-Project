@@ -1,12 +1,26 @@
-import { useContext } from "react";
-import * as style from "./Profile.module.css"
+import { useContext, useEffect, useState } from "react";
+import * as style from "./Profile.module.css";
 import AuthContext from "../../../../contexts/authContext";
+import * as itemService from "../../../../services/itemService";
+import * as purchaseService from "../../../../services/purchaseService";
+import Item from "../../games/item/Item";
 
 export default function Profile() {
-    const {
-        username,
-        email,
-    } = useContext(AuthContext);
+    const {username, email, userId} = useContext(AuthContext);
+    const [myItems, setMyItems] = useState([]);
+    const [boughtItems, setBoughtItems] = useState([]);
+
+    useEffect(() => {
+        itemService.getMyItems(userId)
+        .then((result) => setMyItems(myItems))
+        .then(console.log(userId))
+        .catch((error) => console.log(error));
+
+        purchaseService.getBoughtItems(userId)
+        .then(result => setBoughtItems(result))
+        .catch(err => console.log(err));
+
+    }, [])
 
     return(
         <>
@@ -27,12 +41,7 @@ export default function Profile() {
         
         <div className={style.productsTitle}>My Games:</div>
         <div className={style.productsDiv}>
-        <div className="product-item">
-                <img src="account.jpg" alt="Product 1" />
-                <h3>Product 1</h3>
-                <p>Description of Product 1.</p>
-                <button className="product-button">Details</button>
-            </div>
+            {myItems.map(item => (<Item key={item._id} {...item} />))}
         
         </div>
         
