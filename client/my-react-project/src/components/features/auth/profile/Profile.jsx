@@ -9,11 +9,11 @@ export default function Profile() {
     const {username, email, userId} = useContext(AuthContext);
     const [myItems, setMyItems] = useState([]);
     const [boughtItems, setBoughtItems] = useState([]);
+    
 
     useEffect(() => {
         itemService.getMyItems(userId)
-        .then((result) => setMyItems(myItems))
-        .then(console.log(userId))
+        .then((result) => setMyItems(result))
         .catch((error) => console.log(error));
 
         purchaseService.getBoughtItems(userId)
@@ -41,19 +41,17 @@ export default function Profile() {
         
         <div className={style.productsTitle}>My Games:</div>
         <div className={style.productsDiv}>
+        <div className={style.productContainer}>
             {myItems.map(item => (<Item key={item._id} {...item} />))}
         
         </div>
-        
+        </div>
         <div className={style.productsTitle}>Bought Games:</div>
-        <div className={style.productsDiv}>
+        <div className={style.productContainer}>
+
         
-        <div className="product-item">
-                <img src="account.jpg" alt="Product 1" />
-                <h3>Product 1</h3>
-                <p>Description of Product 1.</p>
-                <button className="product-button">Details</button>
-            </div>
+            {boughtItems.map(item =>  (<Item key={item.itemId._id} {...item.itemId} />))}
+
         </div>
         
 

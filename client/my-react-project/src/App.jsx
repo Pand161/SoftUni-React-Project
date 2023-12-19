@@ -14,6 +14,9 @@ import Path from "./paths"
 import Logout from "./components/features/auth/logout/Logout"
 import Details from "./components/features/games/details/Details"
 import EditGame from "./components/features/games/edit-game/EditGame"
+import AuthGuard from "./components/features/guards/AuthGuard"
+import GuestGuard from "./components/features/guards/GuestGuards"
+import NotFound from "./components/features/not-found/NotFound"
 
 
 function App() {
@@ -26,16 +29,21 @@ function App() {
       <Routes>
         <Route path={Path.Home} element={<Home />} />
         <Route path={Path.AllGames} element={<AllItems />} />
-        <Route path={Path.Create} element={<CreateGame />} />
-
         <Route path={`${Path.Details}/:id`} element={<Details />} />
-        <Route path={`${Path.Edit}/:id`} element={<EditGame />} />
 
+        <Route element={< AuthGuard />} >
+          <Route path={Path.Create} element={<CreateGame />} />
+          <Route path={`${Path.Edit}/:id`} element={<EditGame />} />
+          <Route path={Path.Profile} element={<Profile />} />
+          <Route path={Path.Logout} element={<Logout />} />
+        </Route>
         
+        <Route element={< GuestGuard />} >
         <Route path={Path.Login} element={<Login />} />
         <Route path={Path.Register} element={<Register />} />
-        <Route path={Path.Profile} element={<Profile />} />
-        <Route path={Path.Logout} element={<Logout />} />
+        </Route>
+
+        <Route path='*' element={<NotFound />} />
       </Routes>
       <Footer />
       </>
