@@ -64,3 +64,7 @@
     transition: 0.5s;
     background-color: #75269d;
 }
+
+.errorMessage{
+    color: red;
+}
